@@ -5,28 +5,36 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Iniciar Sesión</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
+        <p:growl id="grwlErrores" />
         <h:form id="formulario">
-            
             <h:panelGroup id="panelLogin" >
                 <p:panel  header="Iniciar Sesión">
                     <p:panelGrid columns="2">
                         <p:outputLabel for="nJugador"  value="Nombre del Jugador:"/>
-                        <p:inputText id="nJugador" required="true" value=""/>
-                        
+                        <p:inputText id="nJugador" required="true" value="#{loginBean.nombreJugador}"/>
+
                         <p:outputLabel for="apodoJugador"  value="Apodo del Jugador:"/>
-                        <p:inputText id="apodoJugador" required="true" value=""/>
-                        
-                        <p:outputLabel for="numSala"  value="Número del Jugador:"/>
-                        <p:inputText id="numSala" required="true" value=""/>
-                        
+                        <p:inputText id="apodoJugador" required="true" value="#{loginBean.apodoJugador}"/>
+
                     </p:panelGrid>
-                    <p:commandButton value="Crear sala" />
-                    <p:commandButton value="Ingresar sala" />
+                    <p:commandButton value="Crear sala" update=":grwlErrores,panelLogin" action="#{loginBean.ingresarSala()}"/>
+                    
+                    
                 </p:panel>
             </h:panelGroup> 
         </h:form>
+        <br />
+        <h:link outcome="/sala/List" value="Show All Sala Items"/>
+        <br />
+        <h:link outcome="/tipoUsuario/List" value="Show All TipoUsuario Items"/>
+        <br />
+        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
     </h:body>
+
+
+
 </html>
 
