@@ -16,6 +16,8 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class AppBean {
     private int cont = 0;
+    
+    private String turnoJugador = "felipe";
 
     /**
      * Creates a new instance of AppBean
@@ -33,6 +35,24 @@ public class AppBean {
     
     public void aumentarContador(){
         cont++;
+    }
+    
+    public void aumentarContador(String nombreJugador){
+        switch(nombreJugador){
+            case "felipe":
+                turnoJugador = "Alison Melisa Jimenez"; 
+                break;
+            default:
+                turnoJugador = "felipe";           
+        }
+        cont++;
+    }
+    
+    public boolean validarTurno(String nombreJugador){
+        if(nombreJugador.equals(turnoJugador)) {
+            return true;
+        }
+        return false;
     }
     
 }

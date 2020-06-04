@@ -80,7 +80,7 @@ public class LoginBean implements Serializable {
         if (usuarioencontrado!= null) {        
             if (usuarioencontrado.getApodoJugador().equals(apodoJugador)) {                
                 usuarioAutenticado = usuarioencontrado;                           
-                return "usuario/List.xhtml";                 
+                return "salapirinola.xhtml";                 
             }            
         }
         JsfUtil.addErrorMessage("erróneo");
