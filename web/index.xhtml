@@ -8,23 +8,24 @@
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
-        <p:growl id="grwlErrores" />
+        <p:growl id="grwlErrores" />        
         <h:form id="formulario">
+            <div align="center">                
             <h:panelGroup id="panelLogin" >
+                <p:graphicImage url="titulopirinola.png" width="400px" />
                 <p:panel  header="Iniciar Sesión">
                     <p:panelGrid columns="2">
                         <p:outputLabel for="nJugador"  value="Nombre del Jugador:"/>
                         <p:inputText id="nJugador" required="true" value="#{loginBean.nombreJugador}"/>
 
                         <p:outputLabel for="apodoJugador"  value="Apodo del Jugador:"/>
-                        <p:inputText id="apodoJugador" required="true" value="#{loginBean.apodoJugador}"/>
-
+                        <p:inputText id="apodoJugador" required="true" value="#{loginBean.apodoJugador}"/>                        
+                      
                     </p:panelGrid>
-                    <p:commandButton value="Crear sala" update=":grwlErrores,panelLogin" action="#{loginBean.ingresarSala()}"/>
-                    
-                    
+                    <p:commandButton value="Crear sala" update=":grwlErrores,panelLogin" action="#{loginBean.ingresarSala()}"/>                                       
                 </p:panel>
-            </h:panelGroup> 
+            </h:panelGroup>
+            </div>    
         </h:form>
         <br />
         <h:link outcome="/sala/List" value="Show All Sala Items"/>
@@ -32,9 +33,6 @@
         <h:link outcome="/tipoUsuario/List" value="Show All TipoUsuario Items"/>
         <br />
         <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
-    </h:body>
-
-
-
+    </h:body>   
 </html>
 

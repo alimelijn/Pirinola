@@ -21,6 +21,8 @@ import javax.ejb.EJB;
 public class LoginBean implements Serializable {
     private String nombreJugador;
     private String apodoJugador;
+    private int numeroSala;
+    private int tipoUsuario;
     private Usuario usuarioAutenticado;
     @EJB
     private UsuarioFacade connUsuario;
@@ -54,19 +56,34 @@ public class LoginBean implements Serializable {
     public void setUsuarioAutenticado(Usuario usuarioAutenticado) {
         this.usuarioAutenticado = usuarioAutenticado;
     }
+
+    public int getNumeroSala() {
+        return numeroSala;
+    }
+
+    public void setNumeroSala(int numeroSala) {
+        this.numeroSala = numeroSala;
+    }
+
+    public int getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
     
-    public String ingresarSala(){
-        Usuario usuarioencontrado = connUsuario.find(nombreJugador);
-        if (usuarioencontrado!=null) {
-            if (usuarioencontrado.getApodoJugador().equals(apodoJugador)) {
-                usuarioAutenticado = usuarioencontrado;
-                return "usuarios"; 
+    
+    
+    public String ingresarSala(){        
+        Usuario usuarioencontrado = connUsuario.find(nombreJugador);       
+        if (usuarioencontrado!= null) {        
+            if (usuarioencontrado.getApodoJugador().equals(apodoJugador)) {                
+                usuarioAutenticado = usuarioencontrado;                           
+                return "usuario/List.xhtml";                 
             }            
         }
         JsfUtil.addErrorMessage("erróneo");
-        return "null";
+        return null;
     }  
-    
-    
-    
 }
