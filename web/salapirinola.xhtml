@@ -14,7 +14,7 @@
     <h:body>                
         <h:panelGroup>
             <p:panel>
-                <p:poll interval="2" update="panelPirinola"/>
+                
                 <h:panelGroup id="panelPirinola">
                     <div id="dinero">Dinero: $2000</div>
                     <div class="vara"></div>
@@ -24,14 +24,17 @@
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-                    
+                    <br></br>                                                           
+                </h:panelGroup>
+                <p:poll interval="2" update="panelContador"/>
+                <h:panelGroup id="panelContador">
                     <p:panel>
                         <h:form>
                             <p:outputLabel value="Contador #{appBean.cont}" /> 
                             <p:commandButton rendered="#{appBean.validarTurno(loginBean.usuarioAutenticado.nombreJugador)}" value="Aumentar" action="#{appBean.aumentarContador(loginBean.usuarioAutenticado.nombreJugador)}" update="panelPirinola" />
                         </h:form>
-                    </p:panel>                    
+                        
+                    </p:panel> 
                 </h:panelGroup>
             </p:panel>
         </h:panelGroup>    

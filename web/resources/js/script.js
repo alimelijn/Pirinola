@@ -34,27 +34,27 @@ function calcular(rand){
     switch(true){
     	case valor > 0 && valor <= 60:
     	    alert("toma 1");
-            sumarPuntos(-20)
+            sumarPuntos(-100)
     	    break;
     	case valor > 60 && valor <= 120:
     	    alert("toma 2");
-    	    sumarPuntos(-40);
+    	    sumarPuntos(-200);
     	    break;
         case valor > 120 && valor <= 180:
             alert("todos ponen");
-            sumarPuntos(0);
+            sumarPuntos(400);
             break; 
         case valor > 180 && valor <= 240:
             alert("pon 2");
-            sumarPuntos(40);
+            sumarPuntos(200);
             break;
         case valor > 240 && valor <= 300:
             alert("pon 1");
-            sumarPuntos(20);
+            sumarPuntos(100);
             break;
         case valor > 300 && valor <= 360:
             alert("toma todo");
-            sumarPuntos(100);
+            sumarPuntos(0);
             break;    
     }},5000);
 }
